@@ -1,0 +1,146 @@
+---
+const areas = [
+  {
+    number: "01",
+    title: "DERECHO CIVIL",
+    items: [
+      "Redacción y Revisión de Contratos Civiles y Comerciales",
+      "Herencias y Posesiones Efectivas",
+      "Estudios de Títulos, Redacción de Escrituras, Inscripciones Conservador de Bienes Raíces",
+      "Responsabilidad Civil",
+      "Juicio Ejecutivo",
+      "Recurso de Protección",
+      "Constitución de Sociedades"
+    ]
+  },
+  {
+    number: "02",
+    title: "DERECHO DE FAMILIA",
+    items: [
+      "Alimentos",
+      "Cuidado Personal",
+      "Divorcios",
+      "Relación Directa y Regular",
+      "Violencia Intrafamiliar",
+      "Filiación o Reconocimiento de Paternidad"
+    ]
+  },
+  {
+    number: "03",
+    title: "DERECHO ADMINISTRATIVO",
+    items: [
+      "Juicios de Hacienda",
+      "Litigios con Municipalidades"
+    ]
+  },
+  {
+    number: "04",
+    title: "DERECHO PENAL",
+    items: [
+      "Agresiones y Riñas",
+      "Amenazas y Extorsiones",
+      "Robos y Hurtos",
+      "Conducción en Estado De Ebriedad",
+      "Accidentes de Tránsito",
+      "Injurias y Calumnias",
+      "Estafas y Delitos Económicos",
+      "Control de Detención",
+      "Medidas Cautelares",
+      "Juicio Oral en lo Penal",
+      "Recurso de Amparo"
+    ]
+  },
+  {
+    number: "05",
+    title: "DERECHO LABORAL",
+    items: [
+      "Defensa de Derechos Laborales",
+      "Nulidad del Despido",
+      "Despido Injustificado",
+      "Autodespido",
+      "Ley Karin",
+      "Licencias Médicas",
+      "Tutela Laboral",
+      "Cumplimiento Y Ejecución De Sentencias (Cobranza Laboral)"
+    ]
+  },
+  {
+    number: "06",
+    title: "JUZGADO DE POLICIA LOCAL",
+    items: [
+      "Infracciones de Tránsito y Ley del Consumidor",
+      "Copropiedad Inmobiliaria y Vecinal",
+      "Demandas de Indemnización de Perjuicios",
+      "Querellas Infraccionales en JPL"
+    ]
+  }
+];
+---
+
+<section id="areas" class="bg-white text-black py-24 md:py-36 px-6 md:px-12 selection:bg-black selection:text-white">
+  <div class="max-w-7xl mx-auto flex flex-col gap-16">
+    
+    <!-- Encabezado Centrado Estilo "How does it work?" -->
+    <div class="text-center">
+      <h2 class="font-montserrat text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-black">
+        Áreas de Trabajo
+      </h2>
+    </div>
+
+    <!-- Layout 2 Columnas estilo "How does it work?" de la referencia -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      
+      <!-- Columna Izquierda: Lista Numerada sin bordes -->
+      <div class="lg:col-span-6 space-y-12">
+        {areas.map((area) => (
+          <div class="space-y-3">
+            <!-- Número pequeño -->
+            <span class="text-xs font-mono font-bold text-zinc-400 tracking-widest block">
+              {area.number}
+            </span>
+
+            <!-- Título del Área más grande en negrita -->
+            <h3 class="font-montserrat text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-black">
+              {area.title}
+            </h3>
+
+            <!-- Subcategorías en fuente pequeña -->
+            <ul class="space-y-1.5 pt-1">
+              {area.items.map((item) => (
+                <li class="text-xs sm:text-sm font-sans text-zinc-600 font-medium leading-relaxed flex items-start gap-2">
+                  <span class="text-zinc-400 font-mono text-xs">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- Columna Derecha: Placeholder de Imagen Sticky Alto Completo -->
+      <div class="lg:col-span-6 sticky top-12">
+        <div class="w-full aspect-[4/5] bg-zinc-100 border border-zinc-200 rounded-3xl shadow-xl overflow-hidden flex flex-col items-center justify-center relative grayscale group">
+          
+          <!-- Fondo sutil estilizado -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-zinc-200 via-zinc-100 to-white opacity-80"></div>
+          
+          <!-- Contenido Placeholder de Imagen -->
+          <div class="relative z-10 flex flex-col items-center gap-4 text-zinc-500 p-8 text-center">
+            <div class="w-20 h-20 rounded-full bg-white border border-zinc-300 flex items-center justify-center shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 stroke-1 text-zinc-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <span class="text-xs font-mono uppercase tracking-widest font-bold text-zinc-700">[ FOTOGRAFÍA / ILUSTRACIÓN ÁREAS LEGALES ]</span>
+            <p class="text-xs text-zinc-500 max-w-xs font-sans">
+              Representación visual de la excelencia y rigurosidad legal de Avantia Abogados.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

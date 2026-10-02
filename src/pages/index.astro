@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import Hero from '../components/Hero.astro';
+import Mision from '../components/Mision.astro';
+import AreasPractica from '../components/AreasPractica.astro';
+import Equipo from '../components/Equipo.astro';
+import Contacto from '../components/Contacto.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+
+<!html>
+<html lang="es" class="scroll-smooth bg-black text-white antialiased">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>AVANTIA ABOGADOS | Asesoría y Representación Jurídica</title>
+		<meta name="description" content="Sitio Oficial de Avantia Abogados. Asesoría jurídica de excelencia en Derecho Civil, Familia, Administrativo, Penal, Laboral y Juzgado de Policía Local." />
+	</head>
+	<body class="font-sans bg-black text-white min-h-screen">
+		<!-- Bloque 1: Hero (Fondo Blanco, Texto Negro) -->
+		<Hero />
+
+		<!-- Bloque 2: Misión (Fondo Negro, Texto Blanco) -->
+		<Mision />
+
+		<!-- Bloque 3: Áreas de Práctica (Fondo Blanco, Texto Negro) -->
+		<AreasPractica />
+
+		<!-- Bloque 4: Equipo (Fondo Negro, Texto Blanco) -->
+		<Equipo />
+
+		<!-- Bloque 5: Contacto & Footer (Fondo Blanco / Negro) -->
+		<Contacto />
+
+		<!-- Botón flotante WhatsApp -->
+		<WhatsAppButton />
+	</body>
+</html>
