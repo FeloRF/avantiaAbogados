@@ -1,0 +1,46 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  items: string[];
+  description?: string;
+}
+
+const { number, title, items, description } = Astro.props;
+---
+
+<article
+  class="bg-zinc-50 border border-zinc-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-black hover:bg-white transition-all duration-300 shadow-sm hover:shadow-xl group"
+>
+  <div class="space-y-4">
+    <!-- Encabezado de la tarjeta con Número -->
+    <div class="flex items-center justify-between border-b border-zinc-200/80 pb-4">
+      <span class="text-xs font-mono font-bold text-zinc-400 tracking-widest uppercase">
+        [ {number} ]
+      </span>
+      <div class="w-2 h-2 rounded-full bg-zinc-300 group-hover:bg-black transition-colors"></div>
+    </div>
+
+    <!-- Título del Área -->
+    <h3 class="font-montserrat text-xl sm:text-2xl font-black uppercase tracking-tight text-black group-hover:text-zinc-900 transition-colors">
+      {title}
+    </h3>
+
+    <!-- Descripción opcional -->
+    {description && (
+      <p class="text-xs sm:text-sm font-sans text-zinc-600 leading-relaxed">
+        {description}
+      </p>
+    )}
+
+    <!-- Lista de Especialidades -->
+    <ul class="space-y-2 pt-2">
+      {items.map((item) => (
+        <li class="text-xs sm:text-sm font-sans text-zinc-600 font-medium leading-relaxed flex items-start gap-2">
+          <span class="text-zinc-400 font-mono text-xs select-none">•</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</article>

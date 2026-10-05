@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import just2 from "../assests/img/just2.png";
+import AreaCard from "./AreaCard.astro";
 
 const areas = [
   {
@@ -8,7 +7,7 @@ const areas = [
     title: "DERECHO CIVIL",
     items: [
       "Redacción y Revisión de Contratos Civiles y Comerciales",
-      "Herencias y Posesiones Efectivas",
+      "Herencias, Posesiones Efectivas y Testamentos",
       "Estudios de Títulos, Redacción de Escrituras, Inscripciones Conservador de Bienes Raíces",
       "Responsabilidad Civil",
       "Juicio Ejecutivo",
@@ -40,7 +39,7 @@ const areas = [
     number: "04",
     title: "DERECHO PENAL",
     items: [
-      "Agresiones y Riñas",
+      "Agresiones, Riñas y Lesiones",
       "Amenazas y Extorsiones",
       "Robos y Hurtos",
       "Conducción en Estado De Ebriedad",
@@ -83,74 +82,51 @@ const areas = [
 <section id="areas" class="bg-white text-black py-24 md:py-36 px-6 md:px-12 selection:bg-black selection:text-white">
   <div class="max-w-7xl mx-auto flex flex-col gap-16">
     
-    <!-- Encabezado Centrado Estilo "How does it work?" -->
-    <div class="text-center">
+    <!-- Encabezado Centrado -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400">
+        [ ESPECIALIDADES JURÍDICAS ]
+      </span>
       <h2 class="font-montserrat text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-black">
         Áreas de Trabajo
       </h2>
+      <p class="text-sm sm:text-base font-sans text-zinc-600 leading-relaxed">
+        Ofrecemos cobertura legal integral en diversas ramas del derecho con un enfoque riguroso y personalizado.
+      </p>
     </div>
 
-    <!-- Layout 2 Columnas estilo "How does it work?" de la referencia -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-      
-      <!-- Columna Izquierda: Lista Numerada sin bordes -->
-      <div class="lg:col-span-6 space-y-12">
-        {areas.map((area) => (
-          <div class="space-y-3">
-            <!-- Número pequeño -->
-            <span class="text-xs font-mono font-bold text-zinc-400 tracking-widest block">
-              {area.number}
-            </span>
+    <!-- Grid Responsivo (1 col en móvil, 2 en tablet, 3 en desktop) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {areas.map((area) => (
+        <AreaCard
+          number={area.number}
+          title={area.title}
+          items={area.items}
+        />
+      ))}
+    </div>
 
-            <!-- Título del Área más grande en negrita -->
-            <h3 class="font-montserrat text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-black">
-              {area.title}
-            </h3>
-
-            <!-- Subcategorías en fuente pequeña -->
-            <ul class="space-y-1.5 pt-1">
-              {area.items.map((item) => (
-                <li class="text-xs sm:text-sm font-sans text-zinc-600 font-medium leading-relaxed flex items-start gap-2">
-                  <span class="text-zinc-400 font-mono text-xs">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-
-      <!-- Columna Derecha: Imagen Sticky y Botón WhatsApp -->
-      <div class="lg:col-span-6 sticky top-12 space-y-4">
-        <div class="w-full aspect-[4/5] bg-zinc-100 border border-zinc-200 rounded-3xl shadow-xl overflow-hidden grayscale">
-          <Image
-            src={just2}
-            alt="Justicia y Áreas de Trabajo Avantia Abogados"
-            class="w-full h-full object-cover"
-          />
-        </div>
-
-        <!-- Botón de contacto a WhatsApp estilo Monocromo / Gris Oscuro -->
-        <a
-          href="https://wa.me/56947041556?text=Hola,%20quisiera%20consultar%20sobre%20sus%20%C3%A1reas%20de%20trabajo%20legal"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="w-full inline-flex items-center justify-center gap-3 px-6 py-4 bg-zinc-900 hover:bg-black text-white rounded-2xl font-montserrat font-bold text-sm tracking-wider uppercase border border-zinc-800 shadow-md hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 group"
+    <!-- Banner Inferior de Contacto a WhatsApp -->
+    <div class="pt-8 flex justify-center">
+      <a
+        href="https://wa.me/56947041556?text=Hola,%20quisiera%20consultar%20sobre%20sus%20%C3%A1reas%20de%20trabajo%20legal"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-zinc-900 hover:bg-black text-white rounded-2xl font-montserrat font-bold text-sm tracking-wider uppercase border border-zinc-800 shadow-md hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 group"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-5 h-5 fill-current text-zinc-300 group-hover:text-white group-hover:scale-110 transition-all"
+          viewBox="0 0 24 24"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-5 h-5 fill-current text-zinc-300 group-hover:text-white group-hover:scale-110 transition-all"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
-            ></path>
-          </svg>
-          <span>Consultar por WhatsApp</span>
-        </a>
-      </div>
-
+          <path
+            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+          ></path>
+        </svg>
+        <span>Consultar por WhatsApp</span>
+      </a>
     </div>
 
   </div>
 </section>
+
