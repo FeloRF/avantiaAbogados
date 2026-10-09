@@ -12,8 +12,8 @@ const areas = [
       "Responsabilidad Civil",
       "Juicio Ejecutivo",
       "Recurso de Protección",
-      "Constitución de Sociedades"
-    ]
+      "Constitución de Sociedades",
+    ],
   },
   {
     number: "02",
@@ -24,16 +24,13 @@ const areas = [
       "Divorcios",
       "Relación Directa y Regular",
       "Violencia Intrafamiliar",
-      "Filiación o Reconocimiento de Paternidad"
-    ]
+      "Filiación o Reconocimiento de Paternidad",
+    ],
   },
   {
     number: "03",
     title: "DERECHO ADMINISTRATIVO",
-    items: [
-      "Juicios de Hacienda",
-      "Litigios con Municipalidades"
-    ]
+    items: ["Juicios de Hacienda", "Litigios con Municipalidades"],
   },
   {
     number: "04",
@@ -49,8 +46,8 @@ const areas = [
       "Control de Detención",
       "Medidas Cautelares",
       "Juicio Oral en lo Penal",
-      "Recurso de Amparo"
-    ]
+      "Recurso de Amparo",
+    ],
   },
   {
     number: "05",
@@ -63,8 +60,8 @@ const areas = [
       "Ley Karin",
       "Licencias Médicas",
       "Tutela Laboral",
-      "Cumplimiento Y Ejecución De Sentencias (Cobranza Laboral)"
-    ]
+      "Cumplimiento Y Ejecución De Sentencias (Cobranza Laboral)",
+    ],
   },
   {
     number: "06",
@@ -73,37 +70,41 @@ const areas = [
       "Infracciones de Tránsito y Ley del Consumidor",
       "Copropiedad Inmobiliaria y Vecinal",
       "Demandas de Indemnización de Perjuicios",
-      "Querellas Infraccionales en JPL"
-    ]
-  }
+      "Querellas Infraccionales en JPL",
+    ],
+  },
 ];
 ---
 
-<section id="areas" class="bg-white text-black py-24 md:py-36 px-6 md:px-12 selection:bg-black selection:text-white">
+<section
+  id="areas"
+  class="bg-white text-black py-24 md:py-36 px-6 md:px-12 selection:bg-black selection:text-white"
+>
   <div class="max-w-7xl mx-auto flex flex-col gap-16">
-    
     <!-- Encabezado Centrado -->
     <div class="text-center max-w-3xl mx-auto space-y-4">
-      <span class="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400">
-        [ ESPECIALIDADES JURÍDICAS ]
-      </span>
-      <h2 class="font-montserrat text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-black">
+      <h2
+        class="font-montserrat text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-black"
+      >
         Áreas de Trabajo
       </h2>
       <p class="text-sm sm:text-base font-sans text-zinc-600 leading-relaxed">
-        Ofrecemos cobertura legal integral en diversas ramas del derecho con un enfoque riguroso y personalizado.
+        Ofrecemos cobertura legal integral en diversas ramas del derecho con un
+        enfoque riguroso y personalizado.
       </p>
     </div>
 
     <!-- Grid Responsivo (1 col en móvil, 2 en tablet, 3 en desktop) -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      {areas.map((area) => (
-        <AreaCard
-          number={area.number}
-          title={area.title}
-          items={area.items}
-        />
-      ))}
+      {
+        areas.map((area) => (
+          <AreaCard
+            number={area.number}
+            title={area.title}
+            items={area.items}
+          />
+        ))
+      }
     </div>
 
     <!-- Banner Inferior de Contacto a WhatsApp -->
@@ -126,7 +127,5 @@ const areas = [
         <span>Consultar por WhatsApp</span>
       </a>
     </div>
-
   </div>
 </section>
-
