@@ -9,23 +9,23 @@ import heroImg from "../assests/img/hall1.jpg";
   <div class="max-w-7xl mx-auto w-full my-auto">
     <!-- Header (Navegación) -->
     <div class="flex justify-between items-center w-full mb-12 md:mb-20">
-      <!-- Logo Construido con Tailwind -->
-      <a href="#" class="flex items-center gap-3 z-50 relative cursor-pointer">
+      <!-- Logo Construido con Tailwind (Agrandado) -->
+      <a href="#" class="flex items-center gap-4 z-50 relative cursor-pointer">
         <!-- Caja Negra del Isotipo -->
         <div
-          class="bg-black text-white font-montserrat font-bold text-2xl md:text-3xl w-12 h-12 md:w-14 md:h-14 flex items-center justify-center tracking-tighter"
+          class="bg-black text-white font-montserrat font-bold text-2xl md:text-3xl lg:text-4xl w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center tracking-tighter shadow-sm"
         >
           AV
         </div>
 
         <!-- Tipografía del Nombre -->
         <div
-          class="flex flex-col font-montserrat uppercase tracking-widest text-black"
+          class="flex flex-col font-montserrat uppercase text-black"
         >
-          <span class="font-bold text-base md:text-lg leading-none mb-1"
+          <span class="font-extrabold text-xl md:text-2xl lg:text-3xl leading-none mb-1 tracking-widest"
             >AVANTIA</span
           >
-          <span class="font-light text-xs md:text-sm leading-none"
+          <span class="font-semibold text-xs md:text-sm lg:text-base leading-none tracking-[0.25em] text-zinc-600"
             >ABOGADOS</span
           >
         </div>
@@ -55,24 +55,26 @@ import heroImg from "../assests/img/hall1.jpg";
     <div
       class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-8 md:mt-12"
     >
-      <!-- Columna Izquierda (Texto y Botón) -->
-      <div>
+      <!-- Columna Izquierda (Texto y Botón sin recuadro) -->
+      <div class="flex flex-col justify-center">
         <h1
           class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase leading-[1.05] tracking-tighter mb-6 text-black text-balance"
         >
-          ASESORÍA Y REPRESENTACIÓN JURÍDICA DE EXCELENCIA
+          ASESORÍA Y REPRESENTACIÓN JURÍDICA.
         </h1>
         <p
           class="text-base md:text-lg text-gray-700 leading-relaxed mb-8 md:mb-10 text-balance"
         >
           Cercanía y rigurosidad. Comprometidos con su éxito legal en cada caso.
         </p>
-        <a
-          href="#contacto"
-          class="inline-block bg-black text-white font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-full hover:bg-gray-800 transition-colors shadow-lg"
-        >
-          AGENDAR CONSULTA LEGAL
-        </a>
+        <div>
+          <a
+            href="#contacto"
+            class="inline-block bg-black text-white font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-full hover:bg-gray-800 transition-colors shadow-lg"
+          >
+            AGENDAR CONSULTA LEGAL
+          </a>
+        </div>
       </div>
 
       <!-- Columna Derecha (Imagen Vertical) -->
